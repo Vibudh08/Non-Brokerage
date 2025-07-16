@@ -365,6 +365,7 @@ const Home = () => {
             ))}
           </div>
         </div>
+        <div>
         <Slider {...propertySlider}>
           {propertyData.map((items, index) => (
             <PropertyCard
@@ -382,6 +383,7 @@ const Home = () => {
             />
           ))}
         </Slider>
+        </div>
       </div>
 
       <div className="bg-gray-50">
