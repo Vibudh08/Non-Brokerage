@@ -5,7 +5,14 @@ import {
 } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./Home";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import AppDownload from "./pages/AppDownload";
+import Subscription from "./pages/Subscription";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import RefundPolicy from "./pages/RefundPolicy";
+import CookiesPolicy from "./pages/CookiesPolicy";
+import TermsAndCondition from "./pages/TermsAndConditions";
 
 export default function App() {
   return (
@@ -13,6 +20,13 @@ export default function App() {
     <Header />
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/app-download" element={<AppDownload/>}/>
+        <Route path="/subscription" element={<Subscription/>}/>
+        <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
+        <Route path="/refund-policy" element={<RefundPolicy/>}/>
+        <Route path="/cookie-policy" element={<CookiesPolicy/>}/>
+        <Route path="/terms-conditions" element={<TermsAndCondition/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

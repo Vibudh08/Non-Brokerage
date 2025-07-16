@@ -1,5 +1,9 @@
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
-import { IoLocationOutline,IoCallOutline,IoMailOutline } from "react-icons/io5";
+import {
+  IoLocationOutline,
+  IoCallOutline,
+  IoMailOutline,
+} from "react-icons/io5";
 import { BsTwitterX } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
@@ -16,16 +20,18 @@ export default function Footer() {
           />
           <ul className="space-y-4 max-md:space-y-2 relative pl-6 max-md:pl-0 max-md:text-sm">
             <li className="relative flex gap-2">
-              <IoLocationOutline className="mt-1"/>
+              <IoLocationOutline className="mt-1" />
               <span>Sector-2, Noida, UP, 201301</span>
             </li>
             <li className="relative flex gap-2">
-              <IoCallOutline className="mt-1.5"/>
+              <IoCallOutline className="mt-1.5" />
               <a href="tel:01145531923">01145531923</a>
             </li>
             <li className="relative flex gap-2">
-              <IoMailOutline className="mt-1.5"/>
-              <a href="mailto:info@nonbrokerage.in">support@btjnonbrokerage.com</a>
+              <IoMailOutline className="mt-1.5" />
+              <a href="mailto:support@btjnonbrokerage.com">
+                support@btjnonbrokerage.com
+              </a>
             </li>
           </ul>
         </div>
@@ -37,39 +43,39 @@ export default function Footer() {
           </h2>
           <ul className="space-y-2 max-md:space-y-1 max-md:grid max-md:grid-cols-2 max-md:text-sm">
             <li className="max-md:mt-1">
-              <a href="/about" className="hover:underline">
+              <Link to="/about" className="hover:underline">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/listing" className="hover:underline">
+              <Link to="/listing" className="hover:underline">
                 List Property
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" className="hover:underline">
+              <Link to="/subscription" className="hover:underline">
                 Pricing
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:underline">
+              <Link to="/contact" className="hover:underline">
                 Contact Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" className="hover:underline">
+              <Link to="/blogs" className="hover:underline">
                 Blogs
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" className="hover:underline">
+              <Link to="/site-map" className="hover:underline">
                 Site Map
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/about" className="hover:underline">
+              <Link to="/help-support" className="hover:underline">
                 Help & Support
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -81,34 +87,34 @@ export default function Footer() {
           </h2>
           <ul className="space-y-2 max-md:space-y-1  max-md:grid max-md:grid-cols-2 max-md:text-sm">
             <li className="max-md:mt-1">
-              <a href="/about" className="hover:underline">
+              <Link to="/" className="hover:underline">
                 Flats in Delhi
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/listing" className="hover:underline">
+              <Link to="/" className="hover:underline">
                 Flats in Mumbai
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:underline">
+              <Link to="/" className="hover:underline">
                 Flats in Gurgaon
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:underline">
+              <Link to="/" className="hover:underline">
                 Flats in Noida
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:underline">
+              <Link to="/" className="hover:underline">
                 Flats in Ghaziabad
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:underline">
+              <Link to="/" className="hover:underline">
                 Flats in Faridabad
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -120,34 +126,34 @@ export default function Footer() {
           </h2>
           <ul className="space-y-2 max-md:space-y-1  max-md:grid max-md:grid-cols-2 max-md:text-sm">
             <li className="max-md:mt-1">
-              <a href="/about" className="hover:underline">
+              <Link to="/" className="hover:underline">
                 House in Delhi
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/listing" className="hover:underline">
+              <Link to="/" className="hover:underline">
                 House in Mumbai
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:underline">
+              <Link to="/" className="hover:underline">
                 House in Gurgaon
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:underline">
+              <Link to="/" className="hover:underline">
                 House in Noida
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:underline">
+              <Link to="/" className="hover:underline">
                 House in Ghaziabad
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:underline">
+              <Link to="/" className="hover:underline">
                 House in Faridabad
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -156,13 +162,13 @@ export default function Footer() {
           <h3 className="text-lg mb-6 text-[#646cff] font-semibold">
             EXPERIENCE ON MOBILE
           </h3>
-          <Link to="">
+          <a href="/">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png"
               alt="Google Play"
               className="w-40"
             />
-          </Link>
+          </a>
 
           <h3 className="font-semibold mt-6 text-[#646cff]">KEEP IN TOUCH</h3>
           <div className="flex gap-3 mt-2  w-fit p-1">
@@ -200,33 +206,32 @@ export default function Footer() {
 
       <div className="border-t border-gray-700 mt-10 pt-6 px-10 max-md:px-0">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between text-sm">
-          <p>
-            © 2025 All Rights Reserved By BTJ Non Brokerage 
-          </p>
+          <p>© 2025 All Rights Reserved By BTJ Non Brokerage</p>
           <ul className="flex gap-4 mt-4 md:mt-0 text-[#646cff]">
             <li>
-              <a href="/privacy-policy" className="hover:underline">
+              <Link to="/privacy-policy" className="hover:underline">
                 Privacy Policy
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/term-conditions" className="hover:underline">
+              <Link to="/terms-conditions" className="hover:underline">
                 Term & Conditions
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/cookie-policy" className="hover:underline">
+              <Link to="/cookie-policy" className="hover:underline">
                 Cookie Policy
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/cookie-policy" className="hover:underline">
+              <Link to="/refund-policy" className="hover:underline">
                 Refund Policy
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </div>
+      
     </footer>
   );
 }

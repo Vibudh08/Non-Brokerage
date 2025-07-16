@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
-import PropertyCard from "./components/PropertyCard";
+import PropertyCard from "../components/PropertyCard";
+import TestimonialsSection from "../components/testimonial/Testimonial";
 import { FaSearchLocation, FaSearch } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // Arrows
 const CustomPrevArrow = ({ onClick }) => (
@@ -118,10 +121,19 @@ const stateData = [
   { img: "/home/delhi.jpg", name: "Delhi" },
 ];
 
+const offers = [
+  { image: "/home/nonbrokerageslide1.jpg" },
+  { image: "/home/ease approved.jpg" },
+  { image: "/home/nonbrokerageslide2.jpg" },
+];
+
 const Home = () => {
   const [selected, setSelected] = useState("All");
   const tabs = ["All", "Apartment", "Flat", "House"];
-
+ const navigate = useNavigate()
+  const handleClick= ()=>{
+    navigate("/listing")
+  }
   const bannerSlider = {
     dots: true,
     infinite: true,
@@ -145,10 +157,18 @@ const Home = () => {
     arrows: true,
     prevArrow: <CustomPrevArrow onClick={() => {}} />,
     nextArrow: <CustomNextArrow onClick={() => {}} />,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   return (
     <main>
-      <div className="relative w-full border border-b-[#6BB3FD] h-screen mt-[-70px] flex items-center justify-center text-center">
+      <div className="relative w-full border border-b-[#6BB3FD] h-screen max-md:h-[550px] mt-[-70px] flex items-center justify-center text-center">
         <div
           className="absolute inset-0 bg-bottom bg-contain bg-no-repeat z-10"
           style={{ backgroundImage: "url('/banner-home-1.jpg')" }}
@@ -162,12 +182,12 @@ const Home = () => {
             animation: "gradient 15s ease infinite",
           }}
         ></div>
-        <div className="z-10">
-          <h2 className="text-[#373373] text-[26px] leading-9">
+        <div className="z-10 max-md:mt-20">
+          <h2 className="text-[#373373] text-[26px] max-md:text-[22px] leading-9 max-md:leading-7">
             The Biggest Non Brokerage <br />{" "}
             <span className="font-semibold"> Property Website Worldwide</span>
           </h2>
-          <div className="bg-white rounded-xl shadow-md p-3 mt-5 mb-2 flex flex-col  md:items-center gap-3 w-full max-w-6xl">
+          <div className="bg-white max-sm:hidden rounded-xl shadow-md p-3 mt-5 mb-2 flex flex-col  md:items-center gap-3 w-full max-w-6xl">
             {/* Filters */}
             <div className="flex flex-1 gap-3">
               <select className="flex-1 bg-gray-100 p-3 rounded-lg text-gray-600 focus:outline-none">
@@ -208,7 +228,7 @@ const Home = () => {
               </select>
             </div>
 
-            {/* Search Input */}
+            {/* Desktop Working Search Input */}
             <div className="flex w-full">
               <div
                 className="flex items-center bg-gray-100 p-4 py-1 rounded-lg   md:flex-none"
@@ -226,29 +246,68 @@ const Home = () => {
               </button>
             </div>
           </div>
-          <div className="flex gap-7 justify-center">
+
+          {/* Mobile Search Input for filter screen*/}
+          <div className="max-sm:flex w-full bg-white p-1.5 mt-4 mb-1 rounded-xl hidden ">
+            <div
+              className="flex items-center bg-gray-100 p-4 py-1 rounded-lg   md:flex-none"
+              style={{ width: "calc(100% - 48px)" }}
+              onClick={(handleClick)}
+            >
+              <FaSearchLocation className="text-[#373373] mr-2" />
+              <input
+                type="text"
+                placeholder="Search properties..."
+                className="flex-1 bg-transparent focus:outline-none text-gray-700"
+              />
+            </div>
+            <button onClick={(handleClick)} className="bg-[#373373] p-3 rounded-md text-white ml-2">
+              <FaSearch />
+            </button>
+          </div>
+
+          {/* property types */}
+          <div className="flex gap-7 max-md:gap-4 justify-center">
             <div className="mt-4 cursor-pointer">
               <div className="w-fit flex flex-col justify-center items-center group">
                 <div className="border rounded-full p-3.5 bg-[#e6f2ff] mb-1.5 w-fit transform transition-transform duration-300 group-hover:-translate-y-1.5">
-                  <img src="/icons/ho1.svg" alt="" className="w-[23px]" />
+                  <img
+                    src="/icons/ho1.svg"
+                    alt=""
+                    className="w-[23px] max-md:w-[20px]"
+                  />
                 </div>
-                <div className="text-[#373373] font-medium">Apartment</div>
+                <div className="text-[#373373] font-medium max-md:text-sm">
+                  Apartment
+                </div>
               </div>
             </div>
             <div className="mt-4 cursor-pointer">
               <div className="w-fit flex flex-col justify-center items-center group">
                 <div className="border rounded-full p-3.5 bg-[#e6f2ff] mb-1.5 w-fit transform transition-transform duration-300 group-hover:-translate-y-1.5">
-                  <img src="/icons/ho2.svg" alt="" className="w-[23px]" />
+                  <img
+                    src="/icons/ho2.svg"
+                    alt=""
+                    className="w-[23px] max-md:w-[20px]"
+                  />
                 </div>
-                <div className="text-[#373373] font-medium">Flat</div>
+                <div className="text-[#373373] font-medium max-md:text-sm">
+                  Flat
+                </div>
               </div>
             </div>
             <div className="mt-4 cursor-pointer">
               <div className="w-fit flex flex-col justify-center items-center group">
                 <div className="border rounded-full p-3.5 bg-[#e6f2ff] mb-1.5 w-fit transform transition-transform duration-300 group-hover:-translate-y-1.5">
-                  <img src="/icons/ho3.svg" alt="" className="w-[23px]" />
+                  <img
+                    src="/icons/ho3.svg"
+                    alt=""
+                    className="w-[23px] max-md:w-[20px]"
+                  />
                 </div>
-                <div className="text-[#373373] font-medium">House</div>
+                <div className="text-[#373373] font-medium max-md:text-sm">
+                  House
+                </div>
               </div>
             </div>
           </div>
@@ -285,14 +344,14 @@ const Home = () => {
       </div>
 
       <div className="mt-6 ">
-        <div className="py-6 px-16">
-          <h2 className="text-[28px] font-semibold text-[#070026]  tracking-tight mb-[-4px]">
+        <div className="py-6 px-16 max-md:px-8">
+          <h2 className="text-[28px] max-md:text-[24px] font-semibold text-[#070026]  tracking-tight mb-[-4px] max-md:mb-[-2px]">
             Recently Added
           </h2>
-          <p className="text-lg tracking-tight">
+          <p className="text-lg max-md:text-base tracking-tight">
             Based on preferences of users like you
           </p>
-          <div className="flex gap-2 mt-6 text-[#73777D]">
+          <div className="flex gap-2 mt-6 max-md:mt-5 text-[#73777D]">
             {tabs.map((tab) => (
               <span
                 key={tab}
@@ -326,14 +385,16 @@ const Home = () => {
       </div>
 
       <div className="bg-gray-50">
-        <div className="py-6 px-16">
-          <h2 className="text-[28px] font-semibold text-[#070026]  tracking-tight mb-[-4px]">
+        <div className="py-6 px-16 max-md:px-6">
+          <h2 className="text-[28px] max-md:text-[20px] font-semibold text-[#070026]  tracking-tight mb-[-4px]max-md:mb-[-2px]">
             Examine Various States for Real Estate
           </h2>
-          <p className="text-lg tracking">Chosen site specifically for you</p>
+          <p className="text-lg max-md:text-base tracking">
+            Chosen site specifically for you
+          </p>
         </div>
         <div className="w-[90%] m-auto">
-          <div className="w-full mt-2 mb-8 overflow-x-auto flex gap-2 flex-nowrap ">
+          <div className="w-full mt-2 pb-12 overflow-x-auto flex gap-1.5 flex-nowrap ">
             {stateData.map((data, index) => (
               <div key={index} className="w-fit relative flex-shrink-0">
                 <img
@@ -348,6 +409,74 @@ const Home = () => {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="mb-8">
+        <div className="py-6 px-16 max-md:px-2 max-md:pb-4 text-center">
+          <h2 className="text-[28px] max-md:text-[22px] font-semibold text-[#070026]  tracking-tight mb-[-4px]max-md:mb-[-2px]">
+            How we help with your journey
+          </h2>
+          <p className="text-lg max-md:text-base tracking max-md:leading-6">
+            People have people to share their journey with for a time.
+          </p>
+        </div>
+        <div className="mt-3 mb-6 hidden md:grid grid-cols-3 gap-2 w-[90%] m-auto ">
+          {offers.map((item, idx) => (
+            <div
+              key={idx}
+              // onClick={() => handleClick(item.url)}
+              className="cursor-pointer"
+            >
+              <img
+                src={item.image}
+                className="w-full h-full object-cover rounded-xl"
+                alt={`Curated ${idx}`}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile View */}
+        <div className="mt-3 w-full md:hidden overflow-hidden">
+          <div className="flex gap-2.5 overflow-x-auto scroll-smooth snap-x snap-mandatory px-4">
+            {offers.map((item, idx) => (
+              <div
+                key={idx}
+                // onClick={() => handleClick(item.url)}
+                className="flex-shrink-0 w-[72vw] snap-center"
+              >
+                <img
+                  src={item.image}
+                  className="w-full h-[auto] object-cover rounded-xl"
+                  alt={`Curated ${idx}`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="!mt-6 mb-6 w-[90%] m-auto relative">
+        <img
+          src="/home/home-new-bg-million.jpg"
+          className="h-[350px] w-full max-md:rounded-3xl"
+          alt=""
+        />
+        <div className="absolute top-0 left-0 ml-10 max-md:ml-0 max-md:rounded-3xl w-full h-full flex flex-col justify-center  text-white p-4">
+          <h2 className="text-4xl max-md:text-2xl font-bold max-w-[350px] mb-5">
+            Why Many Users Trust us since 2025
+          </h2>
+          <p className="max-w-[450px] max-md:text-base">
+            At BTJ Non-Brokerage, we prioritize transparency, efficiency, and
+            customer satisfaction. Since 2025, countless users have trusted us
+            to provide a seamless real estate experience without the hassle of
+            brokerage fees.
+          </p>
+        </div>
+      </div>
+
+      <div className="">
+        <TestimonialsSection />
       </div>
     </main>
   );
