@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import React from "react";
 
 const AppDownload = () => {
+     useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <div className="relative mt-[-70px] z-0">
       <div

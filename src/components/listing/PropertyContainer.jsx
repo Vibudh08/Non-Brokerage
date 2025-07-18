@@ -1,4 +1,5 @@
 import React from "react";
+import { Select } from "antd";
 import PropertyCard from "../../components/PropertyCard";
 const propertyData = [
   {
@@ -87,24 +88,23 @@ const propertyData = [
   },
 ];
 const PropertyContainer = () => {
+  const { Option } = Select;
   return (
-    <div className="bg-white m-3 ml-1.5 rounded-md">
-      <div className=" w-full p-4 pb-3 flex justify-between">
-        <p className="font-semibold text-base text-center flex items-center">
-          Showing 15 Properties for Rent
+    <div className="bg-white m-3 max-md:m-1.5 max-md:my-2 ml-1.5 rounded-xl border pr-0.5 pl-0.5">
+      <div className=" w-full p-4 max-md:px-2 pb-3 flex justify-between">
+        <p className="font-semibold text-base max-sm:text-sm text-center flex items-center">
+          Showing 15 Properties  <span className="ml-1 max-md:hidden"> {" "}  for Rent</span>
         </p>
-        <select name="" id="" className="border border-gray-300 p-1 rounded">
-          <option value="" disabled>
-            Sort By
-          </option>
-          <option value="">Newest</option>
-          <option value="">Oldest</option>
-          <option value="">Price (High to Low)</option>
-          <option value="">Price (Low to High)</option>
-        </select>
+        <Select defaultValue="Sort By" allowClear placeholder="Sort By" className="w-[160px] max-md:w-[150px] max-sm:w-[140px] ">
+          {/* <Option value="option1" disabled>Sort By</Option> */}
+          <Option value="option2">Newest</Option>
+          <Option value="option3">Oldest</Option>
+          <Option value="option4">Price (High to Low)</Option>
+          <Option value="option5">Price (Low to High)</Option>
+        </Select>
       </div>
       <hr className="mb-2 bg-gray-300 h-[1px] m-4  mt-1" />
-      <div className="grid grid-cols-3 p-1">
+      <div className="grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 p-1">
         {propertyData.map((items, index) => (
           <PropertyCard
             key={index}

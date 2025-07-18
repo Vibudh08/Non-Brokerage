@@ -1,9 +1,13 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
 const ContactUs = () => {
   const navigate = useNavigate();
+       useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
 
   return (
     <main>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import PropertyCard from "../components/PropertyCard";
 import TestimonialsSection from "../components/testimonial/Testimonial";
@@ -128,6 +128,11 @@ const offers = [
 ];
 
 const Home = () => {
+
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [selected, setSelected] = useState("All");
   const tabs = ["All", "Apartment", "Flat", "House"];
  const navigate = useNavigate()

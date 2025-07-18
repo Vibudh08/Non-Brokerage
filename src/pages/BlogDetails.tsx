@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +7,9 @@ const BlogDetails = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const post = location.state?.post;
+     useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   if (!post) {
     return (

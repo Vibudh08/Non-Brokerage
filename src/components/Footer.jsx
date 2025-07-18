@@ -5,6 +5,7 @@ import {
   IoMailOutline,
 } from "react-icons/io5";
 import { BsTwitterX } from "react-icons/bs";
+import { QRCode } from "antd";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -162,13 +163,20 @@ export default function Footer() {
           <h3 className="text-lg mb-6 text-[#646cff] font-semibold">
             EXPERIENCE ON MOBILE
           </h3>
-          <a href="/">
+          {/* <a href="/">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png"
               alt="Google Play"
               className="w-40"
             />
-          </a>
+          </a> */}
+          <div className="bg-white w-fit ">
+            <QRCode
+              errorLevel="H"
+              value="https://ant.design/"
+              icon="/favicon11.png"
+            />
+          </div>
 
           <h3 className="font-semibold mt-6 text-[#646cff]">KEEP IN TOUCH</h3>
           <div className="flex gap-3 mt-2  w-fit p-1">
@@ -231,7 +239,6 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      
     </footer>
   );
 }

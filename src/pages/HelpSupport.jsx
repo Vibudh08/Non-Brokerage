@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react';
@@ -47,6 +48,9 @@ const HelpSupport = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+     useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   return (
     <main>
       <div className="relative mt-[-70px] z-0">

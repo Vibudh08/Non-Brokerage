@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -33,6 +34,9 @@ const Blog = () => {
       time: "1:15 PM",
     },
   ];
+  useEffect(() => {
+   window.scrollTo(0, 0);
+ }, []);
 
   return (
     <main>
