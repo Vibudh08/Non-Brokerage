@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PropertyContainer from "../components/listing/PropertyContainer";
 import LeftSidebar from "../components/listing/LeftSidebar";

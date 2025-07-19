@@ -17,10 +17,11 @@ import BlogDetails from "./pages/BlogDetails";
 import Listing from "./pages/Listing";
 import ListingDetails from "./pages/ListingDetails";
 import Account from "./components/Account";
+import Dashboard from "./pages/Dashboard";
 
 function Layout() {
   const location = useLocation();
-  const hideHeaderFooter = location.pathname === "/account";
+  const hideHeaderFooter = location.pathname === "/account" || location.pathname === "/dashboard";
 
   return (
     <>
@@ -42,6 +43,7 @@ function Layout() {
         <Route path="/listing" element={<Listing />} />
         <Route path="/listing-details" element={<ListingDetails />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/dashboard" element={<Dashboard/>}/>
       </Routes>
       {!hideHeaderFooter && <Footer />}
     </>

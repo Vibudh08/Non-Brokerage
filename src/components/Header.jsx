@@ -146,7 +146,7 @@ const Header = () => {
           <div className="hover:bg-white hover:rounded-lg px-3 py-2 text-[#373373] z-50 relative inline-block cursor-pointer"
             onClick={() => navigate("/app-download")}>
             Download App
-            <span className="bg-[#f22b68] text-white text-[9px] rounded-[8px] px-1 h-3.5 absolute top-2.5 right-4 translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+            <span className="bg-[#f22b68] text-white text-[8px] rounded-[8px] px-1 h-3.5 absolute top-2.5 right-4 translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
               FREE
             </span>
           </div>
@@ -159,7 +159,7 @@ const Header = () => {
           <button className="max-md:text-sm max-md:border text-[#373373] z-50" onClick={()=>navigate("/account")}>
             Login
           </button>
-          <button className="max-md:hidden text-[#373373] z-50">
+          <button className="max-md:hidden text-[#373373] z-50" onClick={()=>navigate("/dashboard")}>
             List Your Property
           </button>
           <div className="bg-white z-50 px-3 rounded-lg hidden max-md:block">
