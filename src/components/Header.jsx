@@ -157,10 +157,10 @@ const Header = () => {
           </div>
         </div>
         <div className="gap-2 flex">
-          <button className="max-md:text-sm max-md:border text-[#373373] z-50" onClick={()=>navigate("/account")}>
+          <button className="max-md:text-sm max-md:border text-[#373373] bg-white z-50" onClick={()=>navigate("/account")}>
             Login
           </button>
-          <button className="max-md:hidden text-[#373373] z-50" onClick={()=>navigate("/dashboard")}>
+          <button className="max-md:hidden bg-white text-[#373373] z-50" onClick={()=>navigate("/dashboard")}>
             List Your Property
           </button>
           <div className="bg-white z-50 px-3 rounded-lg hidden max-md:block">
