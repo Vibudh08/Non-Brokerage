@@ -394,7 +394,7 @@ const Account = () => {
                   {/* Otp */}
                   <Input.OTP
                     length={4}
-                    size="middle"
+                    size="large"
                     {...sharedProps}
                     className=""
                   />
