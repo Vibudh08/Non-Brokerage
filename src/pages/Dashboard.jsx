@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useColumnSearch from "../components/columns/useColumnSearch";
 import {
@@ -90,15 +90,20 @@ const Dashboard = () => {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const onClick = ({ key }) => {
     // If a normal item is clicked (not a submenu)
     if (!rootSubmenuKeys.includes(key) && !key.includes(":")) {
       setOpenKeys([]);
     }
 
-     if (window.innerWidth < 1024) { // 'lg' in Tailwind/Antd ≈ 1024px
-    setCollapsed(true);
-  }
+    if (window.innerWidth < 1024) {
+      // 'lg' in Tailwind/Antd ≈ 1024px
+      setCollapsed(true);
+    }
   };
 
   const rootSubmenuKeys = ["property", "subscription"];

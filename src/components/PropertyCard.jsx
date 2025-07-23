@@ -36,22 +36,22 @@ export default function PropertyCard({
           <p className="text-[28px] font-bold text-gray-900 mb-3 ">₹ {price}</p>
           <div className="flex flex-wrap gap-1.5 mb-5">
             <span className="flex items-center gap-1.5 bg-gray-100 px-3.5 py-1.5 rounded-full text-sm text-[#717171]">
-              <img src="/icons/single-bed.jpg" className="w-4" alt="" />
+              <img src="/icons/bedroom.png" className="w-4" alt="" />
               {bed} bed
             </span>
             <span className="flex items-center gap-1.5 bg-gray-100 px-3.5 py-1.5 rounded-full text-sm text-[#717171]">
-              <img src="/icons/bath.svg" className="w-4" alt="" /> {bath} bath
+              <img src="/icons/bath.png" className="w-4" alt="" /> {bath} bath
             </span>
             <span className="flex items-center gap-1.5 bg-gray-100 px-3.5 py-1.5 rounded-full text-sm text-[#717171]">
-              <img src="/icons/city-hall.jpg" className="w-4" alt="" /> {hall}{" "}
+              <img src="/icons/hall.png" className="w-4" alt="" /> {hall}{" "}
               hall
             </span>
             <span className="flex items-center gap-1.5 bg-gray-100 px-3.5 py-1.5 rounded-full text-sm text-[#717171]">
-              <img src="/icons/kitchen.jpg" className="w-4" alt="" /> {kitchen}{" "}
+              <img src="/icons/kitchen.png" className="w-4" alt="" /> {kitchen}{" "}
               Kitchen
             </span>
             <span className="flex items-center gap-1.5 bg-gray-100 px-3.5 py-1.5 rounded-full text-sm text-[#717171]">
-              <img src="/icons/balcony.jpg" className="w-4" alt="" /> {balcony}{" "}
+              <img src="/icons/balcony.png" className="w-4" alt="" /> {balcony}{" "}
               balcony
             </span>
           </div>

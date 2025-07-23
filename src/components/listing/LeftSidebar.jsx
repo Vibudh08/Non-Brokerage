@@ -37,18 +37,19 @@ const LeftSidebar = () => {
       {/* City Dropdown */}
       <div className="font-semibold mb-1.5 text-sm">Location</div>
       <Select
-        className="w-full border-gray-300 "
+        className="w-full border-gray-300 h-[35px]"
         allowClear
+        showSearch
         defaultValue="Select Location"
         placeholder="Select Location"
       >
         {/* <Option value="option1" disabled>Select Location</Option> */}
-        <Option value="option2">Delhi</Option>
-        <Option value="option3">Mumbai</Option>
-        <Option value="option4">Gurgaon</Option>
-        <Option value="option5">Noida</Option>
-        <Option value="option6">Ghaziabad</Option>
-        <Option value="option7">Faridabad</Option>
+        <Option value="delhi">Delhi</Option>
+        <Option value="mumbai">Mumbai</Option>
+        <Option value="gurgaon">Gurgaon</Option>
+        <Option value="noida">Noida</Option>
+        <Option value="ghaziabad">Ghaziabad</Option>
+        <Option value="faridabad">Faridabad</Option>
       </Select>
       <div className="w-full max-w-xl mx-auto mt-4 mb-6">
         <h3 className="font-semibold text-sm mb-4 mt-2">

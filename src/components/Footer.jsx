@@ -17,7 +17,7 @@ export default function Footer() {
           <img
             src="/new_logo.webp"
             alt="footer-logo"
-            className="mb-6 max-w-[200px] bg-white ml-6 max-md:ml-0 p-1"
+            className="mb-6 max-w-[200px] bg-white ml-6 max-md:ml-0 p-1 rounded"
           />
           <ul className="space-y-4 max-md:space-y-2 relative pl-6 max-md:pl-0 max-md:text-sm">
             <li className="relative flex gap-2">
@@ -170,7 +170,7 @@ export default function Footer() {
               className="w-40"
             />
           </a> */}
-          <div className="bg-white w-fit ">
+          <div className="bg-white w-fit rounded">
             <QRCode
               errorLevel="H"
               value="https://ant.design/"

@@ -144,7 +144,7 @@ const Account = () => {
           className="absolute inset-0 z-20"
           style={{
             backgroundImage: "url('/login-form-image.jpg')",
-            backgroundSize: "contain",
+            backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "bottom",
             opacity: 0.3,

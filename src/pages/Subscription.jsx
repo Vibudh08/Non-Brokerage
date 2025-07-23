@@ -56,7 +56,6 @@ const Subscription = () => {
   "red-600": "bg-red-600",
 };
 
-
   return (
     <section>
       <div className="relative mt-[-70px] z-0">

@@ -36,8 +36,8 @@ const AppDownload = () => {
             </button>
           </div>
         </div>
-        <div className="w-1/2 max-md:w-full max-md:mb-5">
-          <img src="bg_app.jpg" alt="" className="w-[90%] max-md:w-full" />
+        <div className="w-1/2 max-md:w-full mt-6 max-md:mb-5">
+          <img src="bg_app.png" alt="" className="w-[90%] max-md:w-full" />
         </div>
       </div>
     </div>

@@ -4,8 +4,10 @@ import PropertyCard from "../components/PropertyCard";
 import TestimonialsSection from "../components/testimonial/Testimonial";
 import { FaSearchLocation, FaSearch } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { Select } from "antd";
+
+const { Option } = Select;
 
 // Arrows
 const CustomPrevArrow = ({ onClick }) => (
@@ -116,29 +118,28 @@ const propertyData = [
 const stateData = [
   { img: "/home/haryana.jpg", name: "Haryana" },
   { img: "/home/madhya-pradesh.jpg", name: "Madhya Pradesh" },
-  { img: "/home/maharashtra.jpg", name: "Maharashtra" },
+  { img: "/home/Maharashtra.jpg", name: "Maharashtra" },
   { img: "/home/uttarpradesh.jpg", name: "Uttar Pradesh" },
   { img: "/home/delhi.jpg", name: "Delhi" },
 ];
 
 const offers = [
-  { image: "/home/nonbrokerageslide1.jpg" },
-  { image: "/home/ease approved.jpg" },
-  { image: "/home/nonbrokerageslide2.jpg" },
+  { image: "/home/help1.jpg" },
+  { image: "/home/help2.jpg" },
+  { image: "/home/help3.jpg" },
 ];
 
 const Home = () => {
-
-   useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const [selected, setSelected] = useState("All");
   const tabs = ["All", "Apartment", "Flat", "House"];
- const navigate = useNavigate()
-  const handleClick= ()=>{
-    navigate("/listing")
-  }
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/listing");
+  };
   const bannerSlider = {
     dots: true,
     infinite: true,
@@ -192,45 +193,66 @@ const Home = () => {
             The Biggest Non Brokerage <br />{" "}
             <span className="font-semibold"> Property Website Worldwide</span>
           </h2>
-          <div className="bg-white max-sm:hidden rounded-xl shadow-md p-3 mt-5 mb-2 flex flex-col  md:items-center gap-3 w-full max-w-6xl">
+          <div className="bg-white max-sm:hidden rounded-xl shadow-md p-3 mt-5 mb-2 flex flex-col  md:items-center gap-3 w-[650px]">
             {/* Filters */}
-            <div className="flex flex-1 gap-3">
-              <select className="flex-1 bg-gray-100 p-3 rounded-lg text-gray-600 focus:outline-none">
-                <option disabled selected>
-                  Location
-                </option>
-                <option>HARYANA</option>
-                <option>MADHYA PRADESH</option>
-                <option>MAHARASHTRA</option>
-                <option>UTTAR PRADESH</option>
-                <option>DELHI</option>
-              </select>
 
-              <select className="flex-1 bg-gray-100 p-3 rounded-lg text-gray-600 focus:outline-none">
-                <option disabled selected>
-                  BHK Type
-                </option>
-                <option>1 BHK</option>
-                <option>2 BHK</option>
-                <option>3 BHK</option>
-              </select>
+            <div className="flex flex-1 gap-2 w-full">
+              {/* Location */}
+              <Select
+                className="flex-1  h-[40px]"
+                placeholder="Location"
+                allowClear
+                showSearch
+                optionFilterProp="children"
+                variant="filled"
+              >
+                <Option value="HARYANA">HARYANA</Option>
+                <Option value="MADHYA PRADESH">MADHYA PRADESH</Option>
+                <Option value="MAHARASHTRA">MAHARASHTRA</Option>
+                <Option value="UTTAR PRADESH">UTTAR PRADESH</Option>
+                <Option value="DELHI">DELHI</Option>
+              </Select>
 
-              <select className="flex-1 bg-gray-100 p-3 rounded-lg text-gray-600 focus:outline-none">
-                <option disabled selected>
-                  Availability
-                </option>
-                <option>Ready to Move</option>
-                <option>Under Construction</option>
-              </select>
+              {/* BHK Type */}
+              <Select
+                className="flex-1 h-[40px]"
+                placeholder="BHK Type"
+                allowClear
+                showSearch
+                optionFilterProp="children"
+                variant="filled"
+              >
+                <Option value="1 BHK">1 BHK</Option>
+                <Option value="2 BHK">2 BHK</Option>
+                <Option value="3 BHK">3 BHK</Option>
+              </Select>
 
-              <select className="flex-1 bg-gray-100 p-3 rounded-lg text-gray-600 focus:outline-none">
-                <option disabled selected>
-                  Budget
-                </option>
-                <option>Below 50 Lakh</option>
-                <option>50 Lakh - 1 Cr</option>
-                <option>Above 1 Cr</option>
-              </select>
+              {/* Availability */}
+              <Select
+                className="flex-1 h-[40px]"
+                placeholder="Availability"
+                allowClear
+                showSearch
+                optionFilterProp="children"
+                variant="filled"
+              >
+                <Option value="Ready to Move">Ready to Move</Option>
+                <Option value="Under Construction">Under Construction</Option>
+              </Select>
+
+              {/* Budget */}
+              <Select
+                className="flex-1 h-[40px]"
+                placeholder="Budget"
+                allowClear
+                showSearch
+                optionFilterProp="children"
+                variant="filled"
+              >
+                <Option value="Below 50 Lakh">Below 50 Lakh</Option>
+                <Option value="50 Lakh - 1 Cr">50 Lakh - 1 Cr</Option>
+                <Option value="Above 1 Cr">Above 1 Cr</Option>
+              </Select>
             </div>
 
             {/* Desktop Working Search Input */}
@@ -257,7 +279,7 @@ const Home = () => {
             <div
               className="flex items-center bg-gray-100 p-4 py-1 rounded-lg   md:flex-none"
               style={{ width: "calc(100% - 48px)" }}
-              onClick={(handleClick)}
+              onClick={handleClick}
             >
               <FaSearchLocation className="text-[#373373] mr-2" />
               <input
@@ -266,7 +288,10 @@ const Home = () => {
                 className="flex-1 bg-transparent focus:outline-none text-gray-700"
               />
             </div>
-            <button onClick={(handleClick)} className="bg-[#373373] p-3 rounded-md text-white ml-2">
+            <button
+              onClick={handleClick}
+              className="bg-[#373373] p-3 rounded-md text-white ml-2"
+            >
               <FaSearch />
             </button>
           </div>
@@ -371,23 +396,23 @@ const Home = () => {
           </div>
         </div>
         <div>
-        <Slider {...propertySlider}>
-          {propertyData.map((items, index) => (
-            <PropertyCard
-              key={index}
-              name={items.name}
-              price={items.price}
-              image={items.image}
-              bed={items.bed}
-              bath={items.bath}
-              hall={items.hall}
-              balcony={items.balcony}
-              kitchen={items.kitchen}
-              city={items.city}
-              state={items.state}
-            />
-          ))}
-        </Slider>
+          <Slider {...propertySlider}>
+            {propertyData.map((items, index) => (
+              <PropertyCard
+                key={index}
+                name={items.name}
+                price={items.price}
+                image={items.image}
+                bed={items.bed}
+                bath={items.bath}
+                hall={items.hall}
+                balcony={items.balcony}
+                kitchen={items.kitchen}
+                city={items.city}
+                state={items.state}
+              />
+            ))}
+          </Slider>
         </div>
       </div>
 
@@ -409,9 +434,9 @@ const Home = () => {
                   className="rounded-2xl w-[180px] h-[230px] object-cover"
                   alt=""
                 />
-                <div className="absolute left-1/2 bottom-[8%] w-full text-center transform -translate-x-1/2 bg-black text-white px-3 py-1">
+                {/* <div className="absolute left-1/2 bottom-[8%] w-full text-center transform -translate-x-1/2 bg-black text-white px-3 py-1">
                   {data.name}
-                </div>
+                </div> */}
               </div>
             ))}
           </div>
