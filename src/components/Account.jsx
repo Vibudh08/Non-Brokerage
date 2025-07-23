@@ -390,18 +390,20 @@ const Account = () => {
                 <p className="text-gray-400 mb-4">
                   We have sent a verification code to your mobile number
                 </p>
-                {/* Otp */}
-                <Input.OTP
-                  length={4}
-                  size="middle"
-                  {...sharedProps}
-                  className=""
-                />
+                <div className="flex flex-col justify-center items-center">
+                  {/* Otp */}
+                  <Input.OTP
+                    length={4}
+                    size="middle"
+                    {...sharedProps}
+                    className=""
+                  />
 
-                {/* Login button */}
-                <button className="w-[160px] bg-[#070026] mt-6 text-white py-1.5 rounded-lg  hover:bg-[#070026] transition">
-                  Verify
-                </button>
+                  {/* Login button */}
+                  <button className="w-[160px] bg-[#070026] mt-6 text-white py-1.5 rounded-lg  hover:bg-[#070026] transition">
+                    Verify
+                  </button>
+                </div>
 
                 <div className="text-center items-center flex justify-center mt-5">
                   {otpTime == 0 ? (
