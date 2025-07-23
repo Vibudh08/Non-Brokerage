@@ -28,7 +28,7 @@ const SubscriptionDetail = ({ dealer, plan_type, listings, date }) => {
             layout="vertical"
             label="User Type:"
             name="dealer"
-            className="font-semibold mb-8"
+            className="font-semibold mb-8 max-md:mb-0"
             labelCol={{ span: 24 }}
             wrapperCol={{ span: 24 }}
           >
@@ -39,7 +39,7 @@ const SubscriptionDetail = ({ dealer, plan_type, listings, date }) => {
             layout="vertical"
             label="Plan Type:"
             name="plan_type"
-            className="font-semibold mb-8"
+            className="font-semibold mb-8 max-md:mb-0"
             labelCol={{ span: 24 }}
             wrapperCol={{ span: 24 }}
           >
@@ -50,7 +50,7 @@ const SubscriptionDetail = ({ dealer, plan_type, listings, date }) => {
             layout="vertical"
             label="Remaining Listings:"
             name="listings"
-            className="font-semibold"
+            className="font-semibold max-md:mb-0"
             labelCol={{ span: 24 }}
             wrapperCol={{ span: 24 }}
           >
@@ -61,7 +61,7 @@ const SubscriptionDetail = ({ dealer, plan_type, listings, date }) => {
             layout="vertical"
             label="Expiry Date:"
             name="date"
-            className="font-semibold"
+            className="font-semibold max-md:mb-0"
             labelCol={{ span: 24 }}
             wrapperCol={{ span: 24 }}
           >

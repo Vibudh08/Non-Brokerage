@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Button } from "antd";
 import { BarChartOutlined } from "@ant-design/icons";
 
-const DashboardCard = ({ title, count, button }) => {
+const DashboardCard = ({ title, count, button, onNavigate }) => {
   return (
     <Card
       key={title}
@@ -13,7 +13,12 @@ const DashboardCard = ({ title, count, button }) => {
         <div className="text-gray-500 font-medium mb-2">{title}</div>
         <div className="text-3xl font-bold mb-4">{count}</div>
         <div className="flex justify-between items-center mt-auto">
-          <Button className="bg-[#070026] text-white rounded-md px-4 py-1">
+          <Button
+            className="bg-[#070026] text-white rounded-md px-4 py-1"
+            onClick={() => {
+              onNavigate();
+            }}
+          >
             {button}
           </Button>
           <BarChartOutlined style={{ fontSize: "40px" }} />

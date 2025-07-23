@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import React from "react";
 
 const AppDownload = () => {
-     useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="relative mt-[-70px] z-0">
       <div
@@ -17,21 +17,28 @@ const AppDownload = () => {
         }}
       ></div>
       <div className="relative h-screen max-md:h-auto w-full flex max-md:flex-col-reverse">
-
-      <div className=" flex flex-col justify-center pb-12 px-3 md:px-20 w-1/2 max-md:w-full">
-        <h2 className="text-2xl md:text-3xl font-bold text-[#06062b] mb-0 ">
-          Non Brokerage on the Go!
-        </h2>
-        <p className="mt-2 text-[#06062b] max-w-md text-lg">
-          Download our top-rated app, made just for you! <br /> It’s free, easy and
-          smart.
-        </p>
-        <div>
-            <input type="text" placeholder="Enter Your Number" className="border border-gray-500 text-gray-500 rounded-lg p-3 mt-4 w-[290px] max-md:w-[200px]" />
-            <button className="bg-[#373373] text-white ml-2 max-md:ml-1.5 rounded-lg px-3 max-md:px-2">Send App Link</button>
+        <div className=" flex flex-col justify-center pb-12 px-2 md:px-20 w-1/2 max-md:w-full">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#06062b] mb-0 ">
+            Non Brokerage on the Go!
+          </h2>
+          <p className="mt-2 text-[#06062b] max-w-md text-lg">
+            Download our top-rated app, made just for you! <br /> It’s free,
+            easy and smart.
+          </p>
+          <div className="w-full flex justify-start items-center mt-4 text-center">
+            <input
+              type="text"
+              placeholder="Enter Your Number"
+              className="border border-gray-500 text-gray-500 rounded-lg p-3 h-[40px] w-[300px] max-md:w-[170px]"
+            />
+            <button className="bg-[#373373] text-white ml-2 max-md:ml-1.5 h-[40px] rounded-lg px-3 max-md:px-2">
+              Send App Link
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="w-1/2 max-md:w-full max-md:mb-5"><img src="bg_app.jpg" alt="" className="w-[90%] max-md:w-full"/></div>
+        <div className="w-1/2 max-md:w-full max-md:mb-5">
+          <img src="bg_app.jpg" alt="" className="w-[90%] max-md:w-full" />
+        </div>
       </div>
     </div>
   );

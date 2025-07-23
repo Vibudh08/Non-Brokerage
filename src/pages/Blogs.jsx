@@ -66,7 +66,7 @@ const Blog = () => {
         </div>
       </div>
       <section className="bg-white flex flex-col lg:flex-row mt-6 mb-6">
-        <div className="flex flex-wrap gap-6 justify-center w-full p-6 max-md:p-4 rounded-lg shadow-sm">
+        <div className="flex flex-wrap gap-6 justify-center w-full p-6 max-md:p-2.5 rounded-lg shadow-sm">
           {blogData.map((post) => {
             const image = post.image || "/asset/image/blog/default-blog.jpg";
             return (
@@ -80,16 +80,16 @@ const Blog = () => {
                   <div className="bg-cover bg-center">
                     <img src={image} alt="" className="h-[200px] w-full" />
                   </div>
-                  <div className="p-5 space-y-2">
-                    <h3 className="text-2xl font-semibold text-gray-800 transition truncate">
+                  <div className="p-5 max-md:p-2 space-y-2">
+                    <h3 className="text-2xl max-md:text-xl font-semibold text-gray-800 transition truncate">
                       {post.title}
                     </h3>
-                    <p className="text-gray-600 text-md leading-6 tracking-wide">
+                    <p className="text-gray-600 text-md max-md:text-sm leading-6 tracking-wide">
                       {post.descpt}
                     </p>
 
-                    <div className="text-[15px] text-gray-500 flex gap-2 mb-4 !mt-4">
-                      <div className="border w-fit px-3 py-1 rounded-lg border-[#373373] text-[#373373]">
+                    <div className="text-[15px] max-md:text-[13px] text-gray-500 flex gap-2 mb-4 !mt-4">
+                      <div className="border w-fit px-3  py-1 rounded-lg border-[#373373] text-[#373373]">
                         Apartment
                       </div>
                       <div className="border w-fit px-3 py-1 rounded-lg border-[#373373] text-[#373373]">

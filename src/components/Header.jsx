@@ -70,13 +70,13 @@ const Header = () => {
             </div>
             <div
               className="text-base py-3.5 p-3 border border-b-[#ddd] "
-              
+              onClick={() => navigate("/dashboard")}
             >
               All Property
             </div>
             <div
               className="text-base py-3.5 p-3 border border-b-[#ddd] "
-              onClick={() => setShow(false)}
+              onClick={() => navigate("/blogs")}
             >
               Blogs
             </div>
@@ -98,6 +98,7 @@ const Header = () => {
           </div>
           <button
             className="bg-[#042065] text-white p-4 py-3 m-2 my-3 w-[180px] "
+            onClick={() => navigate("/dashboard")}
           >
             List Your Property
           </button>
@@ -146,7 +147,7 @@ const Header = () => {
           <div className="hover:bg-white hover:rounded-lg px-3 py-2 text-[#373373] z-50 relative inline-block cursor-pointer"
             onClick={() => navigate("/app-download")}>
             Download App
-            <span className="bg-[#f22b68] text-white text-[8px] rounded-[8px] px-1 h-3.5 absolute top-2.5 right-4 translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+            <span className="bg-[#f22b68] text-white text-[8px] rounded-[8px] px-1 h-3.5 absolute top-2 right-4 translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
               FREE
             </span>
           </div>
